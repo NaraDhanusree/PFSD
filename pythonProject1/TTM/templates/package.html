@@ -1,0 +1,36 @@
+{% extends 'adminhome.html' %}
+{% block 'b1' %}
+<h2 align="center"><font color="DarkGoldenRod"size = "6x"> Insert Packages </font></h2>
+
+<form method="post" action="{% url 'checkpackages' %}">
+{% csrf_token %}
+    <table align="center" border="4">
+        <tr>
+            <td> Enter Tour Code </td>
+            <td><input type="text"name="tourcode" required /> </td>
+        </tr>
+         <tr>
+            <td> Enter Tour Name </td>
+            <td><input type="text"name="tourname" required/> </td>
+        </tr>
+         <tr>
+            <td> Enter Tour Packages </td>
+            <td><input type="text"name="tourpackage" required/> </td>
+        </tr>
+         <tr>
+            <td> Enter Tour description </td>
+            <td><input type="text"name="desc" required /> </td>
+        </tr>
+         <tr>
+            <td align="center"><input type="submit" value="Insert" required/></td>
+             <td align="center"><input type="reset"value="Clear" required/></td>
+        </tr>
+
+    </table>
+</form>
+<div>
+    {% for i in messages %}
+    <h4 align="center"><font color = "peru">{{i}}</font></h4>
+    {% endfor %}
+</div>
+{% endblock %}

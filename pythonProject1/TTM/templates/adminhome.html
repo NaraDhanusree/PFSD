@@ -1,0 +1,31 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TRA TOU MA</title>
+<link type="text/css" rel="stylesheet" href="{% static 'css/style.css'%}">
+
+</head>
+<body>
+
+<a href="{% url 'register'%}">SIGN-UP |</a> &nbsp
+<a href="{% url 'login' %}">LOGINPAGE </a>  &nbsp
+<a href="{% url 'logout' %}">LOGOUT </a>  &nbsp
+{% block 'b1' %}
+<h2 align="center"><font color="DarkGoldenRod" size = "10x">ADMIN TRA TOU MA</font></h2>
+<div>
+    {% for i in messages %}
+    <h4 align="center"><font color = "peru">{{i}}</font></h4>
+    {% endfor %}
+</div>
+{% endblock %}
+
+
+<center><a href="{% url 'home' %}">DASHBOARD |</a> &nbsp
+<a href="{% url 'checkpackages'%}">INSERT PACKAGES|</a> &nbsp
+<a href="{%url 'viewplaces'%}">VIEW PACKAGES</a> &nbsp
+<a href="{% url 'about' %}">ABOUTUS |</a> &nbsp
+<a href="{% url 'contact' %}">CONTACT US </a> &nbsp </center>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TRA TOU MA</title>
+<link type="text/css" rel="stylesheet" href="{% static 'css/style.css'%}">
+
+</head>
+<body  style="background-image: url('{% static 'images/home.jpg' %}');background-repeat:no-repeat;background-size:110%;";>
+<a href="{% url 'register'%}"><font color="DarkGoldenRod">SIGN UP |</font></a> &nbsp
+<a href="{% url 'login' %}"><font color="DarkGoldenRod">LOGINPAGE</font> </a>  &nbsp
+
+{% block 'b1' %}
+<h2 align="center"><font color="DarkGoldenRod" size = "10x">WELCOME TO TRA TOU MA</font></h2>
+{% endblock %}
+<div>
+    {% for i in messages %}
+    <h4 align="center"><font color="black" size="5x">{{i}}</font></h4>
+    {% endfor %}
+</div>
+
+<center ><a href="{% url 'home' %}"><font color="DarkGoldenRod">DASHBOARD |</font> </a> &nbsp
+<a href="{% url 'changepassword' %}"><font color="DarkGoldenRod">CHANGE PASSWORD |</font> </a>
+<a href="{% url 'about' %}"><font color="DarkGoldenRod">ABOUT US|</font></a> &nbsp
+<a href="{% url 'contact' %}"><font color="DarkGoldenRod">CONTACT US</font> </a> &nbsp </center>
+
+</body>
+</html>
